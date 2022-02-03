@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import wrap from '@vue/web-component-wrapper';
+import VuetifyComponent from './components/VuetifyComponent.vue';
 
-Vue.config.productionTip = false
+const WrappedElement = wrap(Vue, VuetifyComponent);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+window.customElements.define('vuetify-component', WrappedElement);
